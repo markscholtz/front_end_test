@@ -1,4 +1,4 @@
-
+/* Test 1 */
 $(document).ready(function() { 
 
 	$('#image img').mouseover(function() {
@@ -10,3 +10,5 @@ $(document).ready(function() {
 	});
 
 });
+
+/* Test 2*/
