@@ -1,11 +1,13 @@
 /* Test 1 */
 $(document).ready(function() { 
 
-	$('#image img').mouseover(function() {
+	$('#image').mouseenter(function() {
+		$('#image .caption').stop();
 		$('#image .caption').animate({opacity: '1'}, 200);
 	});
 	
-	$('#image img').mouseout(function() {
+	$('#image').mouseleave(function() {
+		$('#image .caption').stop();
 		$('#image .caption').animate({opacity: '.3'}, 200);
 	});
 
