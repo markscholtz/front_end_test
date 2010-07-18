@@ -1,4 +1,3 @@
-/* Test 1 */
 $(document).ready(function() { 
 
 	$('#image').mouseenter(function() {
@@ -13,4 +12,3 @@ $(document).ready(function() {
 
 });
 
-/* Test 2*/
