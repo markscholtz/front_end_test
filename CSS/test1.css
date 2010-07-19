@@ -1,0 +1,57 @@
+body 
+{ 
+	font-family:'Gill Sans', Arial, tahoma, sans-serif; 
+	color: #ccc; 
+	font-size: 15px;
+}
+
+h1 
+{ 
+	font-size: 120px; 
+	padding: 10px; 
+	background-color: #eee;
+}
+
+p 
+{ 
+	padding: 5px; 
+	background-color: #fff;
+}
+
+.round 
+{
+	border: 5px solid;
+	border-radius: 30px;
+	-moz-border-radius: 30px;
+	-khtml-border-radius: 30px;
+	-webkit-border-radius: 30px;
+	overflow: hidden;
+	margin: 15px 0px 15px 0px;
+}
+
+.caption 
+{
+	border: 3px solid;
+	border-radius: 30px;
+	-moz-border-radius: 30px;
+	-khtml-border-radius: 30px;
+	-webkit-border-radius: 30px;
+	padding: 0px 15px 0px 15px;
+	background-color: black;
+	font-weight: bold;
+	font-size: 20px; 
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+
+.imageHover
+{
+	opacity: .3;
+}
+
+#image
+{
+	position: relative;
+	width: 534px;
+}
