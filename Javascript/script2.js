@@ -4,13 +4,17 @@ function showInstructions()
 	alert(instructions);
 }
 
-function populateSelect()
+function populateSelects()
 {
-	$('#test').html(populateDays());
-	$('#test1').html(populateMonths());
-	$('#test2').html(populateYears());
+	$('#sdate_day').html(populateDays());
+	$('#sdate_month').html(populateMonths());
+	$('#sdate_year').html(populateYears());
+	$('#edate_day').html(populateDays());
+	$('#edate_month').html(populateMonths());
+	$('#edate_year').html(populateYears());
 }
 
+/* Build up the options for the day select elements from a well-formed JSON string */
 function populateDays()
 {
 	var options = '';
@@ -51,6 +55,7 @@ function populateDays()
 							]\
 				}';
 
+	/* Takes a well-formed JSON string and returns the resulting js object */
 	var days = jQuery.parseJSON(json);
 
 	var j = days.days.length;
@@ -70,6 +75,7 @@ function populateDays()
 	return options;
 }
 
+/* Build up the options for the month select elements from a well-formed JSON string */
 function populateMonths()
 {
 	var options = '';
@@ -91,6 +97,7 @@ function populateMonths()
 							]\
 				}';
 
+	/* Takes a well-formed JSON string and returns the resulting js object */
 	var months = jQuery.parseJSON(json);
 
 	var j = months.months.length;
@@ -110,6 +117,7 @@ function populateMonths()
 	return options;
 }
 
+/* Build up the options for the year select elements from a well-formed JSON string */
 function populateYears()
 {
 	var options = '';
@@ -130,6 +138,7 @@ function populateYears()
 							]\
 				}';
 
+	/* Takes a well-formed JSON string and returns the resulting js object */
 	var years = jQuery.parseJSON(json);
 
 	var j = years.years.length;
@@ -156,12 +165,9 @@ function getTodaysDate()
 	var month = appendZero(now.getMonth() + 1);
 	var day = appendZero(now.getDate());
 
-	var today = year + month + day;
-
-	return today;
+	return year + month + day;
 }
 
-/* For safety, only call this method when the document has loaded ( $(document).ready(....) ) as we are using jQuery selectors within it*/ 
 function getStartDate()
 {
 	var year = $('#sdate_year option:selected').val();
@@ -180,6 +186,7 @@ function getEndDate()
 	return year + month + day;
 }
 
+/* In order to compare dates we need to append a zero to any day/month selected that is a single digit number */
 function appendZero(value)
 {
 	value = value.toString();
@@ -191,7 +198,7 @@ function appendZero(value)
 	return value;
 }
 
-/* For safety, only call this method when the document has loaded ( $(document).ready(....) ) as we are using jQuery selectors within it*/ 
+/* Validate the user selected dates and show an error if the date selected is before today's date */
 function validateDates()
 {
 	var today = getTodaysDate();
@@ -235,7 +242,9 @@ $(document).ready(function() {
 
 	/* Show the instructions as soon as the document is ready */
 	showInstructions();
-	populateSelect();
+
+	/* Populate the select elements with options */
+	populateSelects();
 
 	/* Validate the user selected dates on form submit */
 	$('form').submit(function() {
