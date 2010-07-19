@@ -1,0 +1,45 @@
+h1
+{
+	font-family: Helvetica;
+}
+
+h2
+{
+	font-size: 12px;
+	padding-bottom: 16px;
+}
+
+.startDate 
+{
+	font-family: Lucida Grande;
+	color: green;
+}
+
+.endDate 
+{
+	font-family: Lucida Grande;
+	color: red;
+}
+
+.boldItalic
+{
+	font-weight: bold;
+	font-style: italic;
+}
+
+.headerPadding
+{
+	padding-left: 16px;
+	padding-right: 16px;
+}
+
+.error
+{
+	font-family: Lucida Grande;
+	color: red;
+}
+
+#divInput
+{
+	padding-top: 20px;
+}
